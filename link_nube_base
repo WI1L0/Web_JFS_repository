@@ -1,0 +1,32 @@
+- Creación del Poryecto
+
+https://github.com/WI1L0/Web_JFS_repository.git
+
+- Subido a la nube
+
+http://env-6194050.jelastic.saveincloud.net/
+
+- Creación de la Base de Datos
+
+create database BD_EjemploJfs;
+use BD_EjemploJfs;
+
+create table departamento(
+	id_dep int not null,
+    nombre varchar (500),
+    
+    primary key (id_dep)
+);
+
+create table empleado(
+	id_emp int not null,
+    nombre varchar (500),
+    id_dep_emp int not null,
+    
+     PRIMARY KEY (id_emp),
+    FOREIGN KEY (id_dep_emp) REFERENCES departamento (id_dep)
+);
+
+
+insert into departamento (id_dep, nombre) values (1, 'finansas');
+insert into empleado (id_emp, nombre, id_dep_emp) values (1, 'william', 1);
